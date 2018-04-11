@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Google Home Info</title>
+  <link rel="stylesheet" href="col.css">
+  <style media="screen">
+    body {
+      font-family: 'Ubuntu', sans-serif;
+      /*max-width: 50em;*/
+      /*margin: 0 auto;*/
+      background-color: #121212;
+      color: #efefef;
+      padding: 1em;
+    }
+
+    h1 {
+      margin-top: 0;
+    }
+
+    .col h3, h4 {
+      text-transform: uppercase;
+      color: #666;
+      margin: 0;
+    }
+
+    .col p {
+      font-family: 'Ubuntu Mono', monospace;
+      /*color: skyblue;*/
+    }
+
+    .col {
+      margin: 0;
+      border: 1px solid #333;
+      padding: 4px;
+    }
+  </style>
+</head>
+
+<body onhashchange="location.reload()">
+  <h1><span id="homename">Google Home</span> Info</h1>
+  <!-- <p>Refresh Stats Every <input id="ms" type="number" value="1500" step="100" min="700" onchange="window.location.hash=this.value" style="width: 4em;">ms</p> -->
+  <p>Enter IP and press enter: <input id="ip" type="text" maxlength="15" value="0.0.0.0" onchange="window.location.hash = this.value" style="width: 8em;"></p>
+
+  <div id="out">
+
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="scrape.js"></script>
+  <script src="starter.js"></script>
+</body>
+
+</html>
