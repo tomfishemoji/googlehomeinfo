@@ -8,7 +8,7 @@ function fancyTimeFormat(time) {
   var ret = "";
 
   if (hrs > 0) {
-    ret += "" + hrs + "H " + (mins < 10 ? "0" : "M ");
+    ret += "" + hrs + "H " + (mins < 10 ? "0" : "");
   }
 
   ret += "" + mins + "M " + (secs < 10 ? "0" : "");
