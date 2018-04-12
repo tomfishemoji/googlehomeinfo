@@ -12,7 +12,7 @@ if (hashIp) {
 
 if (ipreg.test(ip)) {
   doThings(ip);
-  setInterval(doThings(ip), ms);
+  window.setInterval(doThings, parseInt(ms), [ip]);
 } else {
   document.getElementById('out').innerHTML = '<h3>Invalid IP Given</h3>'
 }
