@@ -1,9 +1,8 @@
 <?php
 
-  // Got this function from StackOverflow, can't seem to find the answer anymore, but tyvm
   function curl_get_contents($url) {
     $ch = curl_init($url);
-    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 2);
+    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
@@ -15,11 +14,10 @@
 
   header('Content-Type: application/json');
 
-
-  if ($_GET['ip']) {
+  if ($_GET['ip'] && strlen($_GET['ip']) >= 7) {
     $ip = $_GET['ip'];
   } else {
-    die('{"error":"No IP provided"}');
+    die('{"error":"No/Invalid IP Provided"}');
   }
 
   $endpoint = '/setup/eureka_info';
